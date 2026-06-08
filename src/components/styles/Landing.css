@@ -307,3 +307,31 @@ h2.landing-info-h2 {
     font-size: 82px;
   }
 }
+@media screen and (max-width: 768px) {
+  .landing-intro {
+    left: 20px !important;
+    top: 18% !important;
+    width: 85%;
+  }
+
+  .landing-intro h1 {
+    font-size: 42px !important;
+    line-height: 42px !important;
+  }
+
+  .landing-intro h2 {
+    font-size: 18px !important;
+  }
+
+  .landing-info {
+    left: 20px !important;
+    right: auto !important;
+    width: 88% !important;
+    top: 78% !important;
+  }
+
+  .character-model {
+    height: 58vh !important;
+    bottom: 70px !important;
+  }
+}
