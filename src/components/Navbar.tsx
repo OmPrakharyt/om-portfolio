@@ -6,6 +6,7 @@ import { ScrollSmoother } from "gsap/ScrollSmoother";
 import "./styles/Navbar.css";
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
+
 export let smoother: ScrollSmoother;
 
 const Navbar = () => {
@@ -13,8 +14,8 @@ const Navbar = () => {
     smoother = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
-      smooth: 1.7,
-      speed: 1.7,
+      smooth: 1.5,
+      speed: 1.5,
       effects: true,
       autoResize: true,
       ignoreMobileResize: true,
@@ -24,47 +25,62 @@ const Navbar = () => {
     smoother.paused(true);
 
     let links = document.querySelectorAll(".header ul a");
+
     links.forEach((elem) => {
       let element = elem as HTMLAnchorElement;
+
       element.addEventListener("click", (e) => {
         if (window.innerWidth > 1024) {
           e.preventDefault();
+
           let elem = e.currentTarget as HTMLAnchorElement;
           let section = elem.getAttribute("data-href");
+
           smoother.scrollTo(section, true, "top top");
         }
       });
     });
+
     window.addEventListener("resize", () => {
       ScrollSmoother.refresh(true);
     });
   }, []);
+
   return (
     <>
       <div className="header">
-        <a href="/#" className="navbar-title" data-cursor="disable">
-          AM
-        </a>
+
         <a
-          href="https://www.linkedin.com/in/akashrmalhotra/"
+          href="/#"
+          className="navbar-title"
+          data-cursor="disable"
+        >
+          OP
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/omprakhar/"
           className="navbar-connect"
           data-cursor="disable"
           target="_blank"
           rel="noreferrer"
         >
-          linkedin.com/in/akashrmalhotra
+          Connect →
         </a>
+
         <ul>
           <li>
             <a data-href="#about" href="#about">
               <HoverLinks text="ABOUT" />
             </a>
           </li>
+
           <li>
             <a data-href="#work" href="#work">
-              <HoverLinks text="WORK" />
+              <HoverLinks text="PROJECTS" />
             </a>
           </li>
+
           <li>
             <a data-href="#contact" href="#contact">
               <HoverLinks text="CONTACT" />

@@ -1,4 +1,11 @@
-import { lazy, PropsWithChildren, Suspense, useEffect, useState } from "react";
+import {
+  lazy,
+  PropsWithChildren,
+  Suspense,
+  useEffect,
+  useState,
+} from "react";
+
 import About from "./About";
 import Career from "./Career";
 import Contact from "./Contact";
@@ -22,8 +29,11 @@ const MainContainer = ({ children }: PropsWithChildren) => {
       setSplitText();
       setIsDesktopView(window.innerWidth > 1024);
     };
+
     resizeHandler();
+
     window.addEventListener("resize", resizeHandler);
+
     return () => {
       window.removeEventListener("resize", resizeHandler);
     };
@@ -31,24 +41,37 @@ const MainContainer = ({ children }: PropsWithChildren) => {
 
   return (
     <div className="container-main">
+
       <Cursor />
       <Navbar />
       <SocialIcons />
+
       {isDesktopView && children}
+
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <div className="container-main">
-            <Landing>{!isDesktopView && children}</Landing>
+
+            <Landing>
+              {!isDesktopView && children}
+            </Landing>
+
             <About />
-            <WhatIDo />
-            <Career />
-            <Work />
+
             {isDesktopView && (
-              <Suspense fallback={<div>Loading....</div>}>
+              <Suspense fallback={<div>Loading...</div>}>
                 <TechStack />
               </Suspense>
             )}
+
+            <Work />
+
+            <Career />
+
+            <WhatIDo />
+
             <Contact />
+
           </div>
         </div>
       </div>

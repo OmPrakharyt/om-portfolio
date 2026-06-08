@@ -8,36 +8,84 @@ interface Props {
   link?: string;
 }
 
-const WorkImage = (props: Props) => {
-  const [isVideo, setIsVideo] = useState(false);
-  const [video, setVideo] = useState("");
+const WorkImage = ({
+  image,
+  alt,
+  video,
+  link,
+}: Props) => {
+  const [isVideo, setIsVideo] =
+    useState(false);
+
+  const [videoSrc, setVideoSrc] =
+    useState("");
+
   const handleMouseEnter = async () => {
-    if (props.video) {
+    if (video) {
       setIsVideo(true);
-      const response = await fetch(`src/assets/${props.video}`);
-      const blob = await response.blob();
-      const blobUrl = URL.createObjectURL(blob);
-      setVideo(blobUrl);
+
+      try {
+        const response = await fetch(
+          `/videos/${video}`
+        );
+
+        const blob =
+          await response.blob();
+
+        const blobUrl =
+          URL.createObjectURL(blob);
+
+        setVideoSrc(blobUrl);
+      } catch (err) {
+        console.log(
+          "Video load failed"
+        );
+      }
     }
   };
 
   return (
     <div className="work-image">
+
       <a
         className="work-image-in"
-        href={props.link}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={() => setIsVideo(false)}
-        target="_blank"
-        data-cursor={"disable"}
+        href={link || "#"}
+        onMouseEnter={
+          handleMouseEnter
+        }
+        onMouseLeave={() =>
+          setIsVideo(false)
+        }
+        target={
+          link && link !== "#"
+            ? "_blank"
+            : "_self"
+        }
+        rel="noreferrer"
+        data-cursor="disable"
       >
-        {props.link && (
+
+        {link && link !== "#" && (
           <div className="work-link">
             <MdArrowOutward />
           </div>
         )}
-        <img src={props.image} alt={props.alt} />
-        {isVideo && <video src={video} autoPlay muted playsInline loop></video>}
+
+        <img
+          src={image}
+          alt={alt || "Project"}
+        />
+
+        {isVideo && videoSrc && (
+          <video
+            src={videoSrc}
+            autoPlay
+            muted
+            playsInline
+            loop
+          />
+        )}
+
       </a>
     </div>
   );

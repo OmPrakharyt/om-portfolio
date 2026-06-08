@@ -5,70 +5,95 @@ const Career = () => {
     <div className="career-section section-container">
       <div className="career-container">
         <h2>
-          My career <span>&</span>
+          My journey <span>&</span>
           <br /> experience
         </h2>
+
         <div className="career-info">
+
           <div className="career-timeline">
             <div className="career-dot"></div>
           </div>
+
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Co-Founder</h4>
-                <h5>CallHQ.ai</h5>
+                <h4>B.Tech CSE Student</h4>
+                <h5>KL University, Vijayawada</h5>
               </div>
-              <h3>NOW</h3>
+              <h3>2024–Present</h3>
             </div>
             <p>
-              Building CallHQ.ai, a voice AI platform for
-              automating customer calls, support, and conversions.
+              Pursuing B.Tech in Computer Science and Engineering with a strong
+              focus on Artificial Intelligence, Data Science, Software Development,
+              and Data Structures & Algorithms.
             </p>
           </div>
+
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Adobe</h4>
-                <h5>6+ years · Noida</h5>
+                <h4>Competitive Programming</h4>
+                <h5>CodeChef & DSA</h5>
               </div>
-              <h3>2017–24</h3>
+              <h3>2024–Present</h3>
             </div>
             <p>
-              Senior Lead Software Engineer (Feb 2024 – May 2024). Lead Software
-              Engineer (Feb 2021 – Feb 2024). Software Engineer II (Dec 2017 –
-              Feb 2021): internationalization, globalization, and localization for
-              Adobe Technical Communication Suite; functional and linguistic testing
-              strategy; in-house tooling; collaboration with product and engineering
-              for high-quality localized releases.
+              Achieved 4★ on CodeChef and solved 300+ DSA problems across
+              competitive programming platforms, strengthening problem-solving,
+              algorithms, and coding efficiency.
             </p>
           </div>
+
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Consultant</h4>
-                <h5>Genpact Headstrong </h5>
+                <h4>Certifications & Learning</h4>
+                <h5>Cloud, AI & Machine Learning</h5>
               </div>
-              <h3>2016–17</h3>
+              <h3>2024–Present</h3>
             </div>
             <p>
-              Sep 2016 – Nov 2017. Developed and maintained WCF services consumed
-              by the UI; deployment support across environments; NUnit tests and
-              coverage; bug fixes from QA and users; database work.
+              Earned certifications including AWS Certified Cloud Practitioner,
+              Oracle Cloud Infrastructure Data Science Professional, Oracle AI
+              Foundations Associate, GitHub Copilot Certification, NPTEL Machine
+              Learning (IIT Madras), and Fundamental Algorithms: Design &
+              Analysis (Elite).
             </p>
           </div>
+
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Sf Engineer</h4>
-                <h5>Infogain</h5>
+                <h4>AI & Full Stack Projects</h4>
+                <h5>Real-World Development</h5>
               </div>
-              <h3>2013-16</h3>
+              <h3>Ongoing</h3>
             </div>
             <p>
-              Software engineering across enterprise projects, contributing to
-              design, development, and delivery of business applications.
+              Built impactful projects including MediCurex (Virtual Healthcare
+              System), SkyCast Weather Dashboard, Blood & Organ Donation Platform,
+              Solar Smart Bench, and AI-inspired intelligent systems with modern,
+              interactive user experiences.
             </p>
           </div>
+
+          <div className="career-info-box">
+            <div className="career-info-in">
+              <div className="career-role">
+                <h4>AI Portfolio Experience</h4>
+                <h5>Navo AI Inspired Interface</h5>
+              </div>
+              <h3>2026</h3>
+            </div>
+            <p>
+              Designed and developed an AI-inspired interactive portfolio with
+              smart navigation, premium UI, dynamic project showcase, coding
+              achievements, certifications, and recruiter-friendly experience
+              inspired by modern AI systems.
+            </p>
+          </div>
+
         </div>
       </div>
     </div>

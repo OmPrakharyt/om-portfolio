@@ -1,83 +1,175 @@
 .header {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   max-width: var(--cMaxWidth);
   width: var(--cWidth);
-  justify-content: space-between;
-  padding: 20px 0px;
+
+  padding: 22px 0;
   margin-bottom: -100px;
+
   box-sizing: border-box;
+
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
   top: 0;
+
   z-index: 9999;
+
+  backdrop-filter: blur(18px);
 }
+
+/* nav links */
 .header ul {
-  font-size: 12px;
+  font-size: 13px;
+
   display: flex;
   flex-direction: column;
+
   margin: 0;
   padding: 0;
+
   list-style: none;
+
   column-gap: 40px;
-  row-gap: 8px;
+  row-gap: 10px;
+
   align-items: end;
 }
+
 .header ul li {
-  margin-left: 0px;
-  letter-spacing: 1px;
-  color: #ccc;
+  margin-left: 0;
+  letter-spacing: 1.5px;
+
+  color: rgba(255,255,255,0.72);
+
   font-weight: 600;
   cursor: pointer;
+
+  position: relative;
+
+  transition: 0.3s ease;
 }
+
+.header ul li:hover {
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* underline hover */
+.header ul li::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+
+  width: 0%;
+  height: 2px;
+
+  border-radius: 50px;
+
+  background:
+    linear-gradient(
+      to right,
+      #3b82f6,
+      #8b5cf6
+    );
+
+  transition: 0.3s ease;
+}
+
+.header ul li:hover::after {
+  width: 100%;
+}
+
+/* linkedin middle */
 .navbar-connect {
   position: absolute;
   display: none;
+
   left: 50%;
   top: 50%;
+
   transform: translate(-50%, -50%);
+
   font-size: 15px;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
+
   font-weight: 500;
+
+  color: rgba(255,255,255,0.65);
+
+  transition: 0.3s ease;
 }
+
+.navbar-connect:hover {
+  color: #8b5cf6;
+}
+
+/* OM logo */
 .navbar-title {
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.2px;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 1px;
+
+  color: white;
+
+  position: relative;
+
+  transition: 0.3s ease;
 }
+
+.navbar-title:hover {
+  color: #8b5cf6;
+  transform: scale(1.05);
+}
+
+/* tablet */
 @media only screen and (min-width: 500px) {
+
   .header {
-    padding: 20px 0px;
+    padding: 22px 0;
   }
+
   .header ul {
     flex-direction: row;
     align-items: center;
     font-size: 14px;
   }
-  .header ul li {
-    color: #eae5ec;
-  }
+
   .navbar-title {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
+
+/* desktop */
 @media only screen and (min-width: 900px) {
+
   .navbar-connect {
     display: block;
   }
 }
+
+/* large screen */
 @media only screen and (min-width: 1200px) {
+
   .header {
-    padding: 35px 0px;
+    padding: 35px 0;
   }
+
   .header ul {
-    column-gap: 80px;
-    font-size: 16px;
+    column-gap: 70px;
+    font-size: 15px;
   }
+
   .navbar-connect {
-    font-size: 16px;
+    font-size: 15px;
   }
+
   .navbar-title {
-    font-size: 18px;
+    font-size: 20px;
   }
 }

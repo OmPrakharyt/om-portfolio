@@ -4,38 +4,54 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const WhatIDo = () => {
   const containerRef = useRef<(HTMLDivElement | null)[]>([]);
-  const setRef = (el: HTMLDivElement | null, index: number) => {
+
+  const setRef = (
+    el: HTMLDivElement | null,
+    index: number
+  ) => {
     containerRef.current[index] = el;
   };
+
   useEffect(() => {
     if (ScrollTrigger.isTouch) {
       containerRef.current.forEach((container) => {
         if (container) {
           container.classList.remove("what-noTouch");
-          container.addEventListener("click", () => handleClick(container));
+
+          container.addEventListener("click", () =>
+            handleClick(container)
+          );
         }
       });
     }
+
     return () => {
       containerRef.current.forEach((container) => {
         if (container) {
-          container.removeEventListener("click", () => handleClick(container));
+          container.removeEventListener(
+            "click",
+            () => handleClick(container)
+          );
         }
       });
     };
   }, []);
+
   return (
     <div className="whatIDO">
       <div className="what-box">
         <h2 className="title">
           W<span className="hat-h2">HAT</span>
+
           <div>
             I<span className="do-h2"> DO</span>
           </div>
         </h2>
       </div>
+
       <div className="what-box">
         <div className="what-box-in">
+
           <div className="what-border2">
             <svg width="100%">
               <line
@@ -58,6 +74,8 @@ const WhatIDo = () => {
               />
             </svg>
           </div>
+
+          {/* AI & DATA SCIENCE */}
           <div
             className="what-content what-noTouch"
             ref={(el) => setRef(el, 0)}
@@ -84,27 +102,41 @@ const WhatIDo = () => {
                 />
               </svg>
             </div>
+
             <div className="what-corner"></div>
 
             <div className="what-content-in">
-              <h3>AI & AUTOMATION</h3>
-              <h4>Workflow Intelligence for Organizations</h4>
+              <h3>AI & DATA SCIENCE</h3>
+
+              <h4>Building Intelligent AI Solutions</h4>
+
               <p>
-                AI specialist helping organizations automate workflows—internal ops
-                and customer-facing—so teams ship faster with less manual work.
+                Passionate about Artificial Intelligence,
+                Machine Learning, and Data Science with
+                hands-on experience through certifications,
+                cloud technologies, and real-world projects.
+                Focused on developing intelligent systems
+                and solving data-driven problems.
               </p>
-              <h5>Skillset & tools</h5>
+
+              <h5>Skillset & Tools</h5>
+
               <div className="what-content-flex">
-                <div className="what-tags">LLMs &amp; agents</div>
-                <div className="what-tags">Workflow design</div>
-                <div className="what-tags">RAG &amp; retrieval</div>
-                <div className="what-tags">Evals &amp; guardrails</div>
-                <div className="what-tags">Integrations</div>
-                <div className="what-tags">Product strategy</div>
+                <div className="what-tags">Machine Learning</div>
+                <div className="what-tags">Python</div>
+                <div className="what-tags">Data Science</div>
+                <div className="what-tags">AI Fundamentals</div>
+                <div className="what-tags">TensorFlow</div>
+                <div className="what-tags">Oracle Cloud</div>
+                <div className="what-tags">AWS</div>
+                <div className="what-tags">Problem Solving</div>
               </div>
+
               <div className="what-arrow"></div>
             </div>
           </div>
+
+          {/* FULL STACK & DSA */}
           <div
             className="what-content what-noTouch"
             ref={(el) => setRef(el, 1)}
@@ -122,27 +154,40 @@ const WhatIDo = () => {
                 />
               </svg>
             </div>
+
             <div className="what-corner"></div>
+
             <div className="what-content-in">
-              <h3>BUILD &amp; SCALE</h3>
-              <h4>Shipping AI in Production</h4>
+              <h3>FULL STACK & DSA</h3>
+
+              <h4>Building Scalable Applications</h4>
+
               <p>
-                I build the systems behind it: APIs, data, voice/real-time, and
-                full-stack products—production-ready, not slide decks.
+                Strong foundation in Data Structures &
+                Algorithms using Java, combined with
+                modern software development and problem-solving.
+                Actively building projects, participating in
+                competitive programming, and improving coding
+                efficiency through DSA.
               </p>
-              <h5>Skillset & tools</h5>
+
+              <h5>Skillset & Tools</h5>
+
               <div className="what-content-flex">
-                <div className="what-tags">Node.js</div>
-                <div className="what-tags">Python</div>
-                <div className="what-tags">REST &amp; real-time APIs</div>
-                <div className="what-tags">PostgreSQL</div>
-                <div className="what-tags">MongoDB</div>
+                <div className="what-tags">DSA with Java</div>
+                <div className="what-tags">Java</div>
+                <div className="what-tags">Problem Solving</div>
+                <div className="what-tags">Competitive Programming</div>
+                <div className="what-tags">CodeChef</div>
                 <div className="what-tags">React</div>
-                <div className="what-tags">Cloud &amp; infra</div>
+                <div className="what-tags">JavaScript</div>
+                <div className="what-tags">Git & GitHub</div>
               </div>
+
               <div className="what-arrow"></div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -152,15 +197,26 @@ const WhatIDo = () => {
 export default WhatIDo;
 
 function handleClick(container: HTMLDivElement) {
-  container.classList.toggle("what-content-active");
+  container.classList.toggle(
+    "what-content-active"
+  );
+
   container.classList.remove("what-sibling");
+
   if (container.parentElement) {
-    const siblings = Array.from(container.parentElement.children);
+    const siblings = Array.from(
+      container.parentElement.children
+    );
 
     siblings.forEach((sibling) => {
       if (sibling !== container) {
-        sibling.classList.remove("what-content-active");
-        sibling.classList.toggle("what-sibling");
+        sibling.classList.remove(
+          "what-content-active"
+        );
+
+        sibling.classList.toggle(
+          "what-sibling"
+        );
       }
     });
   }

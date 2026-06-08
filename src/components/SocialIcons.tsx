@@ -2,8 +2,9 @@ import {
   FaGithub,
   FaInstagram,
   FaLinkedinIn,
-  FaYoutube,
+  FaCode,
 } from "react-icons/fa6";
+
 import "./styles/SocialIcons.css";
 import { TbNotes } from "react-icons/tb";
 import { useEffect } from "react";
@@ -18,6 +19,7 @@ const SocialIcons = () => {
       const link = elem.querySelector("a") as HTMLElement;
 
       const rect = elem.getBoundingClientRect();
+
       let mouseX = rect.width / 2;
       let mouseY = rect.height / 2;
       let currentX = 0;
@@ -58,55 +60,68 @@ const SocialIcons = () => {
 
   return (
     <div className="icons-section">
-      <div className="social-icons" data-cursor="icons" id="social">
+
+      <div
+        className="social-icons"
+        data-cursor="icons"
+        id="social"
+      >
+
         <span>
           <a
-            href="https://github.com/akashrmalhotra"
+            href="https://github.com/OmPrakharyt"
             target="_blank"
             rel="noreferrer"
           >
             <FaGithub />
           </a>
         </span>
+
         <span>
           <a
-            href="https://www.linkedin.com/in/akashrmalhotra/"
+            href="https://www.linkedin.com/in/omprakhar/"
             target="_blank"
             rel="noreferrer"
           >
             <FaLinkedinIn />
           </a>
         </span>
+
         <span>
           <a
-            href="https://www.youtube.com/@Leftbraincoder"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaYoutube />
-          </a>
-        </span>
-        <span>
-          <a
-            href="https://www.instagram.com/leftbraincoder/"
+            href="https://www.instagram.com/omprakhar_yt/"
             target="_blank"
             rel="noreferrer"
           >
             <FaInstagram />
           </a>
         </span>
+
+        <span>
+          <a
+            href="https://www.codechef.com/users/goofy_halo_29"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaCode />
+          </a>
+        </span>
+
       </div>
+
       <a
-        className="resume-button"
-        href="/Akash_Malhotra.pdf"
-        target="_blank"
-        rel="noreferrer"
-      >
+  className="resume-button"
+  href="/Om_Prakhar_Resume.pdf"
+  target="_blank"
+  rel="noreferrer"
+>
         <HoverLinks text="RESUME" />
+
         <span>
           <TbNotes />
         </span>
       </a>
+
     </div>
   );
 };

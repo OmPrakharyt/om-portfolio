@@ -1,20 +1,81 @@
 .hover-link {
   position: relative;
   display: flex;
-  text-wrap: nowrap;
   overflow: hidden;
+  text-wrap: nowrap;
+  cursor: pointer;
 }
+
 .hover-in {
   position: relative;
-  transition: 0.3s;
+  display: inline-flex;
+
+  font-weight: 600;
+  letter-spacing: 1.5px;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.3s ease;
 }
+
+/* duplicate text */
 .hover-in div {
-  display: flex;
   position: absolute;
   top: 100%;
   left: 0;
+
+  display: flex;
+
+  color: #8b5cf6;
+
+  text-shadow:
+    0 0 10px rgba(139, 92, 246, 0.25),
+    0 0 20px rgba(59, 130, 246, 0.15);
 }
+
+/* slide animation */
 .hover-link:hover .hover-in {
   transform: translateY(-100%);
-  color: var(--accentColor);
+}
+
+/* underline animation */
+.hover-link::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+
+  width: 0%;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    to right,
+    #3b82f6,
+    #8b5cf6
+  );
+
+  transition: width 0.35s ease;
+}
+
+.hover-link:hover::after {
+  width: 100%;
+}
+
+/* glow effect */
+.hover-link:hover {
+  filter: drop-shadow(
+    0 0 10px rgba(139, 92, 246, 0.25)
+  );
+}
+
+/* mobile */
+@media only screen and (max-width: 768px) {
+  .hover-in {
+    letter-spacing: 1px;
+  }
 }

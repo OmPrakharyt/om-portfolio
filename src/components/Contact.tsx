@@ -6,32 +6,52 @@ const Contact = () => {
     <div className="contact-section section-container" id="contact">
       <div className="contact-container">
         <h3>Contact</h3>
+
         <div className="contact-flex">
+
           <div className="contact-box">
             <h4>Connect</h4>
+
             <p>
               <a
-                href="https://www.linkedin.com/in/akashrmalhotra/"
+                href="mailto:prakharbro2006@gmail.com"
                 target="_blank"
                 rel="noreferrer"
                 data-cursor="disable"
               >
-                LinkedIn — akashrmalhotra
+                Email — prakharbro2006@gmail.com
               </a>
             </p>
-            <h4>Education</h4>
+
             <p>
-              PGPWE (MBA), Indian Institute of Management, Lucknow — 2021–2023
+              <a
+                href="https://www.linkedin.com/in/omprakhar/"
+                target="_blank"
+                rel="noreferrer"
+                data-cursor="disable"
+              >
+                LinkedIn — omprakhar
+              </a>
             </p>
+
+            <h4>Education</h4>
+
             <p>
-              B.Tech Computer Science, Manav Rachna Educational Institutions —
-              2009–2013
+              B.Tech Computer Science & Engineering — KL University,
+              Vijayawada (2024–Present)
+            </p>
+
+            <p>
+              Focus Areas: Artificial Intelligence, Data Science,
+              DSA & Software Development
             </p>
           </div>
+
           <div className="contact-box">
             <h4>Social</h4>
+
             <a
-              href="https://github.com/akashrmalhotra"
+              href="https://github.com/OmPrakharyt"
               target="_blank"
               rel="noreferrer"
               data-cursor="disable"
@@ -39,8 +59,9 @@ const Contact = () => {
             >
               GitHub <MdArrowOutward />
             </a>
+
             <a
-              href="https://www.linkedin.com/in/akashrmalhotra/"
+              href="https://www.linkedin.com/in/omprakhar/"
               target="_blank"
               rel="noreferrer"
               data-cursor="disable"
@@ -48,17 +69,9 @@ const Contact = () => {
             >
               LinkedIn <MdArrowOutward />
             </a>
+
             <a
-              href="https://www.youtube.com/@Leftbraincoder"
-              target="_blank"
-              rel="noreferrer"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              YouTube <MdArrowOutward />
-            </a>
-            <a
-              href="https://www.instagram.com/leftbraincoder/"
+              href="https://www.instagram.com/omprakhar_yt/"
               target="_blank"
               rel="noreferrer"
               data-cursor="disable"
@@ -66,15 +79,28 @@ const Contact = () => {
             >
               Instagram <MdArrowOutward />
             </a>
+
+            <a
+              href="https://www.codechef.com/users/goofy_halo_29"
+              target="_blank"
+              rel="noreferrer"
+              data-cursor="disable"
+              className="contact-social"
+            >
+              CodeChef <MdArrowOutward />
+            </a>
           </div>
+
           <div className="contact-box">
             <h2>
-              Designed and Developed <br /> by <span>Akash Malhotra</span>
+              Designed and Developed <br /> by <span>Om Prakhar</span>
             </h2>
+
             <h5>
               <MdCopyright /> 2026
             </h5>
           </div>
+
         </div>
       </div>
     </div>
